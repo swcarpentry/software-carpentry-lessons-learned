@@ -503,6 +503,58 @@ As in chess, success in teaching often comes from the accumulation of
 seemingly small advantages. Here are a few of the things we do that we
 believe have contributed to our success.
 
+\subsection{Feedback loops}\label{s:feedback}
+
+Giving each learner two sticky notes of different colors allows
+instructors to do quick true/false questions as they're teaching. It
+also allows real-time feedback during hands-on work: learners can put
+a green sticky note on their laptop when they have something
+completed, or a red one when they need help.
+
+We also use them as minute cards: before each break, learners take a
+minute to write one thing they've learned on the green sticky note,
+and one thing they found confusing (or too fast or too slow) on the
+red. It only takes a couple of minutes to collate these, and allows
+the instructors to adjust to learners' interests and speed.
+
+We frequently also ask for summary feedback at the end of each day.
+The instructors ask the learners to alternately give one positive and
+one negative point about the day, without repeating anything that has
+already been said.  This requirement forces people to say things they
+otherwise might not: once all the ``safe'' feedback has been given,
+participants will start saying what they \emph{really} think.
+
+\begin{quote}
+\textbf{Different channels, different messages}
+
+Minute cards are anonymous; the alternating up-and-down feedback is
+not.  Each mode has its strengths and weaknesses, and by providing
+both, we hope to get the best of both worls.
+\end{quote}
+
+On a longer timescale, we send a post-workshop assessment
+questionnaire to attendees shortly after the workshop ends.  Response
+rates vary, but are usually low, and the opt-in nature of the survey
+undoubtedly biases the data (Section~\ref{s:assessment}).  Feedback
+from instructors has proven more insightful.  In August 2015, for
+example, Azalee Bostroem surveyed our instructors to find out what
+they were actually teaching about
+Python\footnote{http://software-carpentry.org/blog/2015/09/thinking-about-teaching.html.}
+From this, we learned that 60\% of our learners are novices with
+little or no prior programming experience, and that only a third of
+workshops get through the entire Python lesson.
+
+Finally, starting in January 2015 we began running biweekly debriefing
+sessions for instructors who have recently taught workshops, in which
+they can discuss what they actually did, how it worked, how the
+lessons they actually delivered differed from our templates, what
+problems arose, and so on.  Summaries are posted shortly after each
+meeting, and Alistair Walsh recently collected and posted information
+about the same Python lesson discussed
+above\footnote{http://software-carpentry.org/blog/2015/10/python-debriefing-summary.html}.
+We are now (October 2015) beginning a redesign of the lesson to take
+all this information into account.
+
 \subsection{Live coding}
 
 We teach via live coding rather than using slides: it's more
@@ -585,10 +637,10 @@ enough, and learners often struggle to switch back and forth between
 two different sets of keyboard shortcuts for things like copying and
 pasting.
 
-Some instructors use VMs in the cloud.  This is an authentic way of
-working in fields like bioinformatics, where even simple datasets may
-not fit on laptops, but it does make us dependent on
-university-quality Wi-Fi.
+Some instructors use VPS over SSH or web browser pages instead.  This
+solve the installation issues, but makes us dependent on host
+institutions' WiFi (which can be of highly variable quality), and
+has the issues mentioned above with things like keyboard shortcuts.
 
 \subsection{Collaborative note-taking}\label{s:etherpad}
 
@@ -599,20 +651,6 @@ copy long URLs from the presenter's screen to their computers.) It is
 almost always mentioned positively in post-workshop feedback, and
 several workshop participants have started using it in their own
 teaching.
-
-\subsection{Sticky notes and minute cards}
-
-Giving each learner two sticky notes of different colors allows
-instructors to do quick true/false questions as they're teaching. It
-also allows real-time feedback during hands-on work: learners can put
-a green sticky note on their laptop when they have something
-completed, or a red one when they need help.
-
-We also use them as minute cards: before each break, learners take a
-minute to write one thing they've learned on the green sticky note,
-and one thing they found confusing (or too fast or too slow) on the
-red. It only takes a couple of minutes to collate these, and allows
-the instructors to adjust to learners' interests and speed.
 
 \subsection{Pair programming}
 
@@ -748,15 +786,13 @@ it is done as part of what the Japanese call \emph{jugyokenkyu}
 (lesson study): the systematic observation and discussion of lessons
 by fellow teachers.
 
-In aid of this, we now run a bi-weekly debriefing session for
-instructors who have recently taught workshops, in which they can
-discuss what they actually did, how it worked, how the lessons they
-actually delivered differed from our templates, what problems arose,
-and so on.  We are also planning to revise instructor training to
-require trainees to watch and reflect on videos of experienced
-instructors delivering our lessons.  We hope that making this ``the
-new normal'' will encourage even more collaboration on the content and
-delivery of our lessons.
+In aid of this, in January 2015 we began running bi-weekly debriefing
+sessions for instructors who have recently taught workshops (see
+Section~\ref{s:feedback}).  We are also planning to revise instructor
+training to require trainees to watch and reflect on videos of
+experienced instructors delivering our lessons.  We hope that making
+this ``the new normal'' will encourage even more collaboration on the
+content and delivery of our lessons.
 
 \section{Example: lesson templates}\label{s:lesson-templates}
 
@@ -785,7 +821,7 @@ options.  Over the years, we have tried the following:
   this part of the lesson was the objectives, while that was an
   exercise.
 
-\item \emph{Jupyter Notebooks in a Git repository.}  This was
+\item \emph{All lessons in one big repository.}  This was
   unsatisfactory for (at least) three reasons:
 
   \begin{enumerate}
@@ -797,19 +833,23 @@ options.  Over the years, we have tried the following:
     were inundated with notices about changes to lessons they didn't
     care about.
 
-  \item While it's possible for experienced users to diff and merge
-    Jupyter Notebooks, it is intimidating and error-prone for
-    newcomers (particularly in the face of embedded
-    images).\footnote{The irony of telling people not to use
-      ``binary'' formats like Microsoft Word for documents because
-      they don't play nicely with version control, and then using a
-      format that is almost as awkward, did not escape our
-      users{\ldots}}
-
   \end{enumerate}
 
-\item \emph{Markdown and HTML in a single GitHub repository with a
-    custom build.}
+  At the same time, we experimented with using \href{Jupyter
+  Notebooks}{http://jupyter.org/} to author lessons.  Notebooks are
+  a wonderful tool for doing real scientific work, but less well
+  suited to large-scale collaboration.  In particular, while it's
+  possible for experienced users to diff and merge Jupyter Notebooks,
+  it is intimidating and error-prone for newcomers (particularly in
+  the face of embedded images).\footnote{The irony of telling people
+    not to use ``binary'' formats like Microsoft Word for documents
+    because they don't play nicely with version control, and then
+    using a format that is almost as awkward, did not escape our
+    users{\ldots}}
+
+
+\item \emph{Markdown and HTML in a single GitHub repository per lesson
+  with a custom build.}
   Markdown files in the \texttt{gh-pages} branch of a GitHub repository
   will be automatically translated into HTML using a tool called
   Jekyll, and those HTML pages will then be published as a website.
@@ -820,12 +860,12 @@ options.  Over the years, we have tried the following:
   HTML ourselves and commit that to the \texttt{gh-pages} branch rather
   than run Jekyll on the server at all.
 
-  Another problem is that Markdown supports a very impoverished subset
-  of HTML.  In particular, there is no way to create \texttt{div}
-  elements to represent things like callout boxes, exercises, lesson
-  goals, and so on.  We have resorted to using blockquotes for all of
-  these, with some post-processing and CSS tricks to get the
-  appearance we want.
+  Another problem is that many things can only be expressed in
+  Markdown by using HTML directly.  In particular, there is no way to
+  create \texttt{div} elements to represent things like callout boxes,
+  exercises, lesson goals, and so on.  We have resorted to using
+  blockquotes for all of these, with some post-processing and CSS
+  tricks to get the appearance we want.
 
 \end{itemize}
 
@@ -1035,37 +1075,55 @@ organize and teach workshops over the years; and the thousands of
 people who have taken a few days to learn how to get more science
 done in less time, with less pain.
 
-\nocite{*}
-{\small\bibliographystyle{unsrt}
-\bibliography{software-carpentry-lessons-learned}}
-
 \section{Tables}
 
-\begin{table}
-\begin{tabular}{lll}
-Indiana University & Michigan State University & Microsoft \\
-MITACS & Queen Mary University of London & Scimatic \\
-SciNet & SHARCNet & UK Met Office
+\begin{table}[h]
+\begin{tabular}{l}
+Indiana University \\
+Michigan State University \\
+Microsoft \\
+MITACS \\
+Queen Mary University of London \\
+Scimatic \\
+SciNet \\
+SHARCNet \\
+UK Met Office \\
 \end{tabular}
 \caption{Launch Partners (May 2010)}
 \label{t:launch-partners}
 \end{table}
 
-\begin{table}
-\begin{tabular}{lll}
-Berkeley Institute for Data Science & Compute Canada & ELIXIR~UK \\
-GitHub & Insight Data Science & iPlant \\
-Lawrence Berkeley National Laboratory & Michigan State University & Netherlands eScience Center \\
-New Zealand eScience Infrastructure & RStudio & Software Sustainability Institute \\
-University College London & UCAR & University of California Davis \\
-University of Florida & University of Leeds & University of Melbourne \\
-University of Michigan & University of Oklahoma & University of Washington
+\begin{table}[h]
+\begin{tabular}{l}
+Berkeley Institute for Data Science \\
+Compute Canada \\
+ELIXIR~UK \\
+GitHub \\
+Insight Data Science \\
+iPlant \\
+Lawrence Berkeley National Laboratory \\
+Michigan State University \\
+Netherlands eScience Center \\
+New Zealand eScience Infrastructure \\
+Oklahoma State University \\
+RStudio \\
+Software Sustainability Institute \\
+University College London \\
+UCAR \\
+University of California Davis \\
+University of Colorado \\
+University of Florida \\
+University of Leeds \\
+University of Melbourne \\
+University of Michigan \\
+University of Oklahoma \\
+University of Washington \\
 \end{tabular}
 \caption{Current Partners (October 2015)}
 \label{t:current-partners}
 \end{table}
 
-\begin{table}
+\begin{table}[h]
 \begin{tabular}{lrr}
 \textbf{Country} & \textbf{Workshops} & \textbf{Instructors} \\
 United States & 216 & 232 \\
@@ -1101,7 +1159,7 @@ India & 0 & 1 \\
 \label{t:by-country}
 \end{table}
 
-\begin{table}
+\begin{table}[h]
 \begin{tabular}{ll}
 \textbf{Topic} & \textbf{Contributors} \\
 Git & 55 \\
@@ -1115,5 +1173,9 @@ SQL & 41
 \caption{Contributors per Lesson, 2014-15}
 \label{t:authors-per-lesson}
 \end{table}
+
+\nocite{*}
+{\small\bibliographystyle{unsrt}
+\bibliography{software-carpentry-lessons-learned}}
 
 \end{document}
