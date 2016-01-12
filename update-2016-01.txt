@@ -1,0 +1,19 @@
+This revision brings the paper up to date by incorporating changes made and new lessons learned between early 2014 and the end of 2015:
+
+* Described formation of the independent Software Carpentry Foundation.
+
+* Described formation of our sibling project, Data Carpentry.
+
+* Updated data on number of workshops, learners, and instructors over time.
+
+* Added references to studies of Software Carpentry that have appeared in the past two years.
+
+* Expanded discussion of the instructor training program.
+
+* Expanded discussion of teaching methods, and of why better teaching methods are hard to transfer.
+
+* Described the first publication of our lessons.
+
+* Updated discussion of current challenges and future directions.
+
+* Removed summary of pre-assessment questionnaire.
